@@ -1,0 +1,21 @@
+{
+    "AndroidVmSshUsername": "TODO: create and provide your SSH username which should be used for SSH sessions. E.g. you can create dedicated user in VM which is named to 'AndroidBackup'",
+    "AndroidVmSshHostKeyFingerprint": "TODO: provide here SSH fingerprint of your VM. You can get it during first SSH connection to VM. E.g. it can look like: 'SHA256:7KMZvJiITZ+HbOyqjNPV5AeC5As2GSZES5baxy1NIe4' ",
+    "AndroidVmSshUserPuttyPrivateKeyFullpathInHostSystem": "TODO: create private key in putty format and provide here full path to file with this private key. E.g. it can look like 'C:\\Users\\<your_username>\\AndroidBackupUserPrivateKey.ppk'",
+    "AndroidVmName": "TODO: provide here name of your Android VM. Currently only names from hyper-v VMs are supported here. E.g. name can be like 'Android-x86_64-8.1-r6'",
+    "AndroidVmApplicationsForBackupList":[
+        "TODO: provide here list of applications which you are going to backup. Precondition: all those applications should be installed on Android VM. See templates for applications below:",
+        "Typically you will have the following template name for application 'domain.company.applicationName'. E.g. see below:",
+        "domainA.companyB.applicationNameC",
+        "domainD.companyE.applicationNameF",
+        "...",
+        "domainX.companyY.applicationNameZ",
+        "below some real application names which were tested with this backup mechanism:",
+        "io.timetrack.timetrackapp",
+        "ru.zenmoney.androidsub",
+        "com.google.android.keep",
+        "----",
+        "Of course you must remove all comments from this json-configuration file :) Every application should be in single array entry. No other entries are allowed in array elements"
+    ],
+	"AndroidVmOutputFolderFullpath": "TODO: create output folder in Android VM where you expect to have output archive files. Provide fullpath here. E.g. it can look like '/storage/emulated/0/Applications/AndroiBackup/OutpuFolderWithBackupArchives'"
+}
