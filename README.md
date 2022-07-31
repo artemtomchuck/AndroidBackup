@@ -115,7 +115,7 @@ If you want to have automatic backup then add task into Windows task scheduler w
   * Hyper-v (virtualization technology integrated into Windows OS). Tested with 10.0.19041.1 version of virtmgmt.msc
   * Android installation (iso-image with Android OS distribution). Tested with android-x86_64-8.1-r6.iso from https://www.android-x86.org/releases/releasenote-8-1-r6.html
 * On Android VM
-  * SSH server for Android. Tested with "Servers Ultimate" by "Ice Cold Apps" developer https://play.google.com/store/apps/details?id=com.icecoldapps.serversultimate version 8.1.12 and additional SSH plugin https://play.google.com/store/apps/details?id=com.icecoldapps.serversultimate.packe version 4.2.18
+  * SSH server for Android. Tested with "Servers Ultimate Pro" by "Ice Cold Apps" developer https://play.google.com/store/apps/details?id=com.icecoldapps.serversultimatepro version 8.1.12 and additional SSH plugin https://play.google.com/store/apps/details?id=com.icecoldapps.serversultimate.packe version 4.2.18
   * Application to autostart SSH server after Android is rebooted. Tested with "AutoStart - No root" by "Guro Labs" developer https://play.google.com/store/apps/details?id=com.autostart version 2.2
   * Installed applications which you are going to back up
 
