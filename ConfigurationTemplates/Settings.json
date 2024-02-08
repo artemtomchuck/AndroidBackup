@@ -17,5 +17,7 @@
         "----",
         "Of course you must remove all comments from this json-configuration file :) Every application should be in single array entry. No other entries are allowed in array elements"
     ],
-	"AndroidVmOutputFolderFullpath": "TODO: create output folder in Android VM where you expect to have output archive files. Provide fullpath here. E.g. it can look like '/storage/emulated/0/Applications/AndroiBackup/OutpuFolderWithBackupArchives'"
+	"AndroidVmOutputFolderFullpath": "TODO: create output folder in Android VM where you expect to have output archive files. Provide fullpath here. E.g. it can look like '/storage/emulated/0/Applications/AndroiBackup/OutpuFolderWithBackupArchives'",
+    "AndroidVmWaitInSecondsWhenTurnedOn": "TODO: provide here integer number in seconds to wait AndroidBackup to start up. After that period we assume that VM is actually started and SSH server is autostarted on that VM as well",
+    "AndroidVmWaitInSecondsBeforeShutdown": "TODO: provide here integer number in seconds to wait AndroidBackup VM before shutting it down. Wait is started after backup is done. And can be used as some period to finish file syncrhonization e.g. if VM uploads output to cloud storage"
 }

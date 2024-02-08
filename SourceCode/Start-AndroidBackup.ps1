@@ -111,6 +111,8 @@ function Initialize-HostEnvironmentScriptVariables {
             $script:AndroidVmSshUserPuttyPrivateKeyFullpathInHostSystem = $AndroidBackupSettingsFromConfigFile.AndroidVmSshUserPuttyPrivateKeyFullpathInHostSystem
             $script:AndroidVmOutputFolderFullpath = $AndroidBackupSettingsFromConfigFile.AndroidVmOutputFolderFullpath
             $script:AndroidVmApplicationsForBackupList = $AndroidBackupSettingsFromConfigFile.AndroidVmApplicationsForBackupList
+            $script:AndroidVmWaitInSecondsWhenTurnedOn = $AndroidBackupSettingsFromConfigFile.AndroidVmWaitInSecondsWhenTurnedOn
+            $script:AndroidVmWaitInSecondsBeforeShutdown = $AndroidBackupSettingsFromConfigFile.AndroidVmWaitInSecondsBeforeShutdown
             
             ### standalone variables ### 
             $script:HostTmpFolderFullpath = "$($env:TEMP)\$($AndroidBackupApplicationName)"
@@ -308,7 +310,7 @@ function Initialize-AndroidVmEnvironment {
 function Start-AndroidVm {
     Write-LogMessage "start Android VM `"$($AndroidVmName)`""
     Start-VM -Name $AndroidVmName
-    Start-Wait 60 "until Android VM `"$($AndroidVmName)`" is booted. Assuming this time is enough for VM being completely booted and SSH server on VM being automatically started"
+    Start-Wait $AndroidVmWaitInSecondsWhenTurnedOn "until Android VM `"$($AndroidVmName)`" is booted. Assuming this time is enough for VM being completely booted and SSH server on VM being automatically started"
 }
 
 function Stop-AndroidVm {
@@ -326,8 +328,8 @@ function Backup-SelectedListOfAndroidVmApplications {
     # this step is needed only if your output folder is mapped to some cloud storage. You don't want to stop Android VM if sync process (which is running on Android) hasn't yet synced your data.
     # if your output folder is mapped to some simple folder (e.g. mapped to Windows host folder via Samba server) then this step is not necessary
     # If needed then you can also create some new parameter in Settings.json which will define if you have to wait. This can be just an integer parameter with seconds
-
-    Start-Wait 180 "so sync process will have enough time to upload local files from Android VM output folder `"$($AndroidVmOutputFolderFullpath)`" into cloud storage"
+    
+    Start-Wait $AndroidVmWaitInSecondsBeforeShutdown "so sync process will have enough time to upload local files from Android VM output folder `"$($AndroidVmOutputFolderFullpath)`" into cloud storage"
 }
 
 function Start-AndroidBackup {
